@@ -29,6 +29,18 @@ resp.addEventListener("click", function () {
       }
       break;}
 });
+body.addEventListener("click", function (e) {
+  
+  if (!resp.contains(e.target)) {
+    if (currentIndex === 1) {
+      // تنفيذ التأثيرات الخاصة بـ case 0
+      resp.style.transform = "rotate(0deg)";
+      nav.style.top = "-500px";
+      nav.style.left = "-500px";
+      currentIndex = 0;
+    }
+  }
+});
 function updateNavDisplay() {
   const bodyWidth = window.innerWidth;
   const nav = document.querySelector('nav'); 
